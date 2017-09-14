@@ -169,7 +169,7 @@
             <groupId>com.adobe.acs</groupId>
             <artifactId>acs-aem-commons-content</artifactId>
             <!-- for AEM 6.0 or 6.1, use version 2.x -->
-            <version>3.6.2</version>
+            <version>3.10.0</version>
             <type>content-package</type>
             <classifier>min</classifier>
         </dependency>

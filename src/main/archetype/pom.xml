@@ -20,7 +20,8 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>pom</packaging>
     <version>${version}</version>
-    <description>${artifactName}</description>
+    <name>${artifactName}</name>
+    <description>${artifactName} package for Adobe Experience Manager</description>
 
     <!-- ====================================================================== -->
     <!-- M O D U L E S                                                          -->
@@ -48,6 +49,8 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <acs.commons.version>${acsCommonsVersion}</acs.commons.version>
     </properties>
 
     <!-- ====================================================================== -->
@@ -316,15 +319,49 @@
     <!-- P R O F I L E S                                                        -->
     <!-- ====================================================================== -->
     <profiles>
+
+        <!-- ====================================================== -->
+        <!-- B I N T R A Y  P R O F I L E - A C S  R E L E A S E S  -->
+        <!-- ====================================================== -->
+        <!-- Use this profile when the Adobe repo isn't working.    -->
+        <profile>
+            <id>bintray-acs-releases</id>
+
+            <!--<activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>-->
+
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-acs-releases</id>
+                    <name>bintray</name>
+                    <url>https://dl.bintray.com/acs/releases</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-acs-releases</id>
+                    <name>bintray-plugins</name>
+                    <url>https://dl.bintray.com/acs/releases</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
         <!-- ====================================================== -->
         <!-- A D O B E   P U B L I C   P R O F I L E                -->
         <!-- ====================================================== -->
+        <!-- Uncomment these sections ONLY on a local development environment. -->
         <profile>
             <id>adobe-public</id>
 
-            <activation>
+            <!--<activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>
+            </activation>-->
 
             <properties>
                 <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
@@ -461,17 +498,6 @@
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.adobe.aem</groupId>
-                <artifactId>uber-jar</artifactId>
-                <version>6.2.0</version>
-                <!-- for AEM6.1 use this version     : <version>6.1.0</version> -->
-                <!-- for AEM6.1 SP1 use this version : <version>6.1.0-SP1-B0001</version> -->
-                <!-- for AEM6.1 SP2 use this version : <version>6.1.0-SP2</version> -->
-                <!-- for AEM6.2 use this version     : <version>6.2.0</version> -->
-                <classifier>obfuscated-apis</classifier>
-                <scope>provided</scope>
-            </dependency>
             <dependency>
                 <groupId>org.apache.geronimo.specs</groupId>
                 <artifactId>geronimo-atinject_1.0_spec</artifactId>

@@ -113,5 +113,12 @@
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
         </dependency>
+        <!-- AEM Commons - BUNDLE -->
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>3.10.0</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 </project>

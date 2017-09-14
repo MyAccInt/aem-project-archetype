@@ -51,6 +51,9 @@
         <requiredProperty key="siteName">
             <defaultValue>${packageGroup} Site</defaultValue>
         </requiredProperty>
+        <requiredProperty key="acsCommonsVersion">
+            <defaultValue>3.10.0</defaultValue>
+        </requiredProperty>
     </requiredProperties>
 
     <modules>
