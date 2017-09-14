@@ -327,9 +327,9 @@
         <profile>
             <id>bintray-acs-releases</id>
 
-            <!--<activation>
+            <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>-->
+            </activation>
 
             <repositories>
                 <repository>
@@ -359,9 +359,9 @@
         <profile>
             <id>adobe-public</id>
 
-            <!--<activation>
+            <activation>
                 <activeByDefault>true</activeByDefault>
-            </activation>-->
+            </activation>
 
             <properties>
                 <releaseRepository-Id>adobe-public-releases</releaseRepository-Id>
