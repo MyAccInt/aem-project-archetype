@@ -20,8 +20,12 @@
     <artifactId>${artifactId}</artifactId>
     <packaging>pom</packaging>
     <version>${version}</version>
-    <description>${artifactName}</description>
+    <name>${artifactName}</name>
+    <description>${artifactName} package for Adobe Experience Manager</description>
 
+    <!-- ====================================================================== -->
+    <!-- M O D U L E S                                                          -->
+    <!-- ====================================================================== -->
     <modules>
         <module>core</module>
         <module>ui.apps</module>
@@ -30,6 +34,9 @@
         <module>it.launcher</module>
     </modules>
 
+    <!-- ====================================================================== -->
+    <!-- P R O P E R T I E S                                                    -->
+    <!-- ====================================================================== -->
     <properties>
         <aem.host>localhost</aem.host>
         <aem.port>4502</aem.port>
@@ -42,8 +49,13 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <acs.commons.version>${acsCommonsVersion}</acs.commons.version>
     </properties>
 
+    <!-- ====================================================================== -->
+    <!-- B U I L D   D E F I N I T I O N                                        -->
+    <!-- ====================================================================== -->
     <build>
         <plugins>
             <!-- Maven Release Plugin -->
@@ -303,10 +315,47 @@
         </pluginManagement>
     </build>
 
+    <!-- ====================================================================== -->
+    <!-- P R O F I L E S                                                        -->
+    <!-- ====================================================================== -->
     <profiles>
+
+        <!-- ====================================================== -->
+        <!-- B I N T R A Y  P R O F I L E - A C S  R E L E A S E S  -->
+        <!-- ====================================================== -->
+        <!-- Use this profile when the Adobe repo isn't working.    -->
+        <profile>
+            <id>bintray-acs-releases</id>
+
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-acs-releases</id>
+                    <name>bintray</name>
+                    <url>https://dl.bintray.com/acs/releases</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>bintray-acs-releases</id>
+                    <name>bintray-plugins</name>
+                    <url>https://dl.bintray.com/acs/releases</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
         <!-- ====================================================== -->
         <!-- A D O B E   P U B L I C   P R O F I L E                -->
         <!-- ====================================================== -->
+        <!-- Uncomment these sections ONLY on a local development environment. -->
         <profile>
             <id>adobe-public</id>
 
@@ -444,12 +493,18 @@
 
     </profiles>
 
-
     <!-- ====================================================================== -->
     <!-- D E P E N D E N C I E S                                                -->
     <!-- ====================================================================== -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>org.apache.geronimo.specs</groupId>
+                <artifactId>geronimo-atinject_1.0_spec</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency>
+            
             <!-- OSGi Dependencies -->
             <dependency>
                 <groupId>org.osgi</groupId>
@@ -476,7 +531,7 @@
                 <version>1.5.11</version>
                 <scope>provided</scope>
             </dependency>
-            <!-- Apache Sling Dependencies -->
+            <!-- Adobe AEM Dependencies -->
             <dependency>
                 <groupId>com.adobe.aem</groupId>
                 <artifactId>uber-jar</artifactId>
@@ -484,14 +539,19 @@
                 <classifier>apis</classifier>
                 <scope>provided</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.adobe.cq</groupId>
+                <artifactId>core.wcm.components.all</artifactId>
+                <type>zip</type>
+                <version>1.0.4</version>
+            </dependency>
+            <!-- Apache Sling Dependencies -->
             <dependency>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>org.apache.sling.models.api</artifactId>
                 <version>1.0.0</version>
                 <scope>provided</scope>
             </dependency>
-
             <!-- Servlet API -->
             <dependency>
                 <groupId>javax.servlet</groupId>
@@ -519,6 +579,7 @@
                 <version>5.7.4</version>
                 <scope>provided</scope>
             </dependency>
+
             <!-- Testing -->
             <dependency>
                 <groupId>junit</groupId>

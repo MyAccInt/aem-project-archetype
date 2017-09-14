@@ -73,6 +73,7 @@ contentFolderName  | /content folder name
 cssId              | prefix used in generated css
 packageGroup       | Content Package Group name
 siteName           | AEM site name
+acsCommonsVersion  | The version of [ACS Commons](https://adobe-consulting-services.github.io/acs-aem-commons) to use with this project
 
 ### Requirements
 

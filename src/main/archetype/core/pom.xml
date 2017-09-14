@@ -17,16 +17,28 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    
+    <!-- ====================================================================== -->
+    <!-- P A R E N T  P R O J E C T  D E S C R I P T I O N                      -->
+    <!-- ====================================================================== -->
     <parent>
         <groupId>${groupId}</groupId>
         <artifactId>${rootArtifactId}</artifactId>
         <version>${version}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
+
+    <!-- ====================================================================== -->
+    <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+    <!-- ====================================================================== -->
     <artifactId>${artifactId}</artifactId>
     <packaging>bundle</packaging>
     <name>${artifactName} - Core</name>
     <description>Core bundle for ${artifactName}</description>
+    
+    <!-- ====================================================================== -->
+    <!-- B U I L D   D E F I N I T I O N                                        -->
+    <!-- ====================================================================== -->
     <build>
         <plugins>
             <plugin>
@@ -50,6 +62,9 @@
         </plugins>
     </build>
 
+    <!-- ====================================================================== -->
+    <!-- D E P E N D E N C I E S                                                -->
+    <!-- ====================================================================== -->
     <dependencies>
         <!-- OSGi Dependencies -->
         <dependency>
@@ -97,6 +112,13 @@
         <dependency>
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
+        </dependency>
+        <!-- AEM Commons - BUNDLE -->
+        <dependency>
+            <groupId>com.adobe.acs</groupId>
+            <artifactId>acs-aem-commons-bundle</artifactId>
+            <version>3.10.0</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>
