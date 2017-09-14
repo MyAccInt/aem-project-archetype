@@ -46,6 +46,7 @@
     <!-- B U I L D   D E F I N I T I O N                                        -->
     <!-- ====================================================================== -->
     <build>
+        <sourceDirectory>src/main/content/jcr_root</sourceDirectory>
         <resources>
             <!-- define the resources that will go into the package -->
             <resource>
@@ -106,12 +107,17 @@
                     </embeddeds>
                     <subPackages>
                         <subPackage>
-                            <groupId>com.adobe.acs</groupId>
-                            <artifactId>acs-aem-commons-content</artifactId>
+                            <groupId>com.adobe.cq</groupId>
+                            <artifactId>core.wcm.components.all</artifactId>
                             <filter>true</filter>
                         </subPackage>
                     </subPackages>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>htl-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
@@ -128,7 +134,14 @@
 
         <dependency>
             <groupId>com.adobe.aem</groupId>
-            <artifactId>aem-api</artifactId>
+            <artifactId>uber-jar</artifactId>
+            <classifier>apis</classifier>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.cq</groupId>
+            <artifactId>core.wcm.components.all</artifactId>
+            <type>zip</type>
         </dependency>
 
         <dependency>

@@ -53,10 +53,10 @@ Or use your mvn skills:
     mvn org.apache.maven.plugins:maven-archetype-plugin:2.4:generate \
      -DarchetypeGroupId=com.adobe.granite.archetypes \
      -DarchetypeArtifactId=aem-project-archetype \
-     -DarchetypeVersion=10 \
+     -DarchetypeVersion=11 \
      -DarchetypeCatalog=https://repo.adobe.com/nexus/content/groups/public/
 
-Where 10 is the archetype version number that you want to use.
+Where 11 is the archetype version number that you want to use.
 
 ### Available properties
 
@@ -76,8 +76,21 @@ siteName           | AEM site name
 
 ### Requirements
 
-* Adobe Experience Manager 6 or higher
-* Apache Maven (3.x should do)
+The latest version of the archetype has the following requirements
+
+* Adobe Experience Manager 6.3 or higher
+* Apache Maven (3.3.9 or newer)
+
+See below for support for older versions of AEM.
+
+Archetype Version | AEM Version
+------------------|-------------
+7                 | 6.0 or newer
+8                 | 6.0 or newer
+9                 | 6.0 or newer
+10                | 6.0 or newer
+11                | 6.2 or newer
+12                | 6.3 or newer
 
 ## Building
 
@@ -91,4 +104,4 @@ Then change to the directory in which you want to create the project and run:
     mvn archetype:generate \
      -DarchetypeGroupId=com.adobe.granite.archetypes \
      -DarchetypeArtifactId=aem-project-archetype \
-     -DarchetypeVersion=11-SNAPSHOT
+     -DarchetypeVersion=12-SNAPSHOT
