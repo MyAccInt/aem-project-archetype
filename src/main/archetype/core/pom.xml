@@ -68,31 +68,8 @@
     <dependencies>
         <!-- OSGi Dependencies -->
         <dependency>
-<<<<<<< HEAD
-            <groupId>com.adobe.aem</groupId>
-            <artifactId>uber-jar</artifactId>
-            <classifier>obfuscated-apis</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-atinject_1.0_spec</artifactId>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.scr</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.scr.annotations</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>biz.aQute</groupId>
-            <artifactId>bndlib</artifactId>
-=======
             <groupId>org.osgi</groupId>
             <artifactId>osgi.core</artifactId>
->>>>>>> 62b044ba750b645ff53bd212007d43fe4f5689d0
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
