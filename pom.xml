@@ -19,16 +19,16 @@
 
   <groupId>com.adobe.granite.archetypes</groupId>
   <artifactId>aem-project-archetype</artifactId>
-  <version>12</version>
+  <version>12-SNAPSHOT</version>
   <packaging>maven-archetype</packaging>
 
   <name>AEM Multi-Module Archetype</name>
   <description>AEM multi-module archetype.</description>
 
   <scm>
-      <connection>scm:git:https://github.com/Adobe-Marketing-Cloud/aem-project-archetype.git</connection>
-      <developerConnection>scm:git:https://github.com/Adobe-Marketing-Cloud/aem-project-archetype.git</developerConnection>
-      <url>https://github.com/Adobe-Marketing-Cloud/aem-project-archetype/tree/master/</url>
+      <connection>scm:git:https://github.com/MyAccInt/aem-project-archetype.git</connection>
+      <developerConnection>scm:git:https://github.com/MyAccInt/aem-project-archetype.git</developerConnection>
+      <url>https://github.com/MyAccInt/aem-project-archetype/tree/master/</url>
       <tag>aem-project-archetype-12</tag>
   </scm>
 
