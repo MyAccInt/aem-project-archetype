@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2017-09-13T07:22:35.202+02:00"
         cq:lastModifiedBy="admin"
-        cq:templateType="/conf/cmp/settings/wcm/template-types/empty-page"
-        jcr:description="Simple content page for the adaptTo Site"
+        cq:templateType="/conf/${confFolderName}/settings/wcm/template-types/empty-page"
+        jcr:description="Simple content page for the ${siteName} Site"
         jcr:primaryType="cq:PageContent"
         jcr:title="Content Page"
         status="enabled"/>

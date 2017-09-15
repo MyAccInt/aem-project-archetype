@@ -49,7 +49,10 @@
             <defaultValue>${packageGroup} Components</defaultValue>
         </requiredProperty>
         <requiredProperty key="siteName">
-            <defaultValue>${packageGroup} Site</defaultValue>
+            <defaultValue>${packageGroup}</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="confFolderName">
+            <defaultValue>${contentFolderName}</defaultValue>
         </requiredProperty>
         <requiredProperty key="acsCommonsVersion">
             <defaultValue>3.10.0</defaultValue>
